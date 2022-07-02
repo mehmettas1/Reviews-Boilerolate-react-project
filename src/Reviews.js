@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import data from "./data";
 import Review from "./Review";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -28,6 +28,21 @@ const RandomReview = () => {
   const randIndex = Math.floor(Math.random()*data.length)
   randIndex !== index ? SetIndex(randIndex) : RandomReview();
 }
+
+
+
+useEffect(() => {
+   const interval = setInterval(() => {
+       Next()
+       console.log("glitch");
+   },2000)
+
+  return () => {
+    clearInterval(interval)
+    console.log("temizledim");
+  }
+})
+
 
   return (
     <section>
