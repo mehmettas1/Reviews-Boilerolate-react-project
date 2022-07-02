@@ -24,6 +24,11 @@ const Reviews = () => {
   
 }
 
+const RandomReview = () => {
+  const randIndex = Math.floor(Math.random()*data.length)
+  randIndex !== index ? SetIndex(randIndex) : RandomReview();
+}
+
   return (
     <section>
         <Review key = {data[index].id}
@@ -32,7 +37,7 @@ const Reviews = () => {
         <div className="btn-container">
           <span className="previous" onClick={Previous} ><FaChevronLeft/></span>
           <span className="next" onClick={Next} ><FaChevronRight/></span>
-           
+           <button onClick={RandomReview} >Suprise Me</button>
         </div>
     </section>
   )
