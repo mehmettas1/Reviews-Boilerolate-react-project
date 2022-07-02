@@ -31,28 +31,28 @@ const RandomReview = () => {
 
 
 
-useEffect(() => {
-   const interval = setInterval(() => {
-       Next()
-       console.log("glitch");
-   },2000)
+// useEffect(() => {
+//    const interval = setInterval(() => {
+//        Next()
+//        console.log("glitch");
+//    },2000)
 
-  return () => {
-    clearInterval(interval)
-    console.log("temizledim");
-  }
-})
+//   return () => {
+//     clearInterval(interval)
+//     console.log("temizledim");
+//   }
+// })
 
 
   return (
-    <section>
+    <section className="container" >
         <Review key = {data[index].id}
         {...data[index]}
         />
         <div className="btn-container">
           <span className="previous" onClick={Previous} ><FaChevronLeft/></span>
           <span className="next" onClick={Next} ><FaChevronRight/></span>
-           <button onClick={RandomReview} >Suprise Me</button>
+           <button className="surprise-btn" onClick={RandomReview} >Suprise Me</button>
         </div>
     </section>
   )
